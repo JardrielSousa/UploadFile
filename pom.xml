@@ -12,7 +12,7 @@
 	<artifactId>UploadingFile</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>UploadingFile</name>
-	<description>Demo project for Spring Boot</description>
+	<description>this project was created with goal for practice upload files</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -50,6 +50,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+			<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit5-engine</artifactId>
+			<version>5.0.0-ALPHA</version>
 		</dependency>
 	</dependencies>
 
