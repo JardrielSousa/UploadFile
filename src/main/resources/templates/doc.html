@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>File Update/Download</title>
+</head>
+<body>
+	<div>
+		<h3>Update Multiple files</h3>
+		<form id="uploadFiles" name="uploadFiles" method="POST" th:action=@{/uploadFiles}
+		encType="multipart/form-data">
+			<input type="file" name="files" multiple required />
+			<button type="submit">submit</button>
+		</form>
+	</div>
+	<div>
+		<h3>List of Documents</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Download Link</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="doc:${docs}">
+					<td th:text="${doc.Id}" />
+					<td th:text="${doc.docName}" />
+					<td>
+						<a th:href="@{'/downloadFile/'+${doc.id}}">Download</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
