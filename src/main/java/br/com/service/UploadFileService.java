@@ -1,4 +1,4 @@
-package br.com.model.service;
+package br.com.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.com.model.Doc;
-import br.com.model.repository.UploadFileRepository;
+import br.com.repository.UploadFileRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

@@ -1,4 +1,4 @@
-package br.com.model.controller;
+package br.com.controller;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.com.model.Doc;
-import br.com.model.service.UploadFileService;
+import br.com.service.UploadFileService;
 import lombok.RequiredArgsConstructor;
 
 @Controller
