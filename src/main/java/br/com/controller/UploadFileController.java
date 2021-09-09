@@ -1,7 +1,5 @@
 package br.com.controller;
 
-import java.util.List;
-
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -26,8 +24,7 @@ public class UploadFileController {
 
 	@GetMapping("/")
 	public String get(Model model) {
-		List<Doc> docs = uploadFileService.getFiles();
-		model.addAttribute("docs", docs);
+		uploadFileService.getFiles().stream().forEach(docs->model.addAttribute("docs", docs));
 		return "doc";
 	}
 
@@ -42,6 +39,7 @@ public class UploadFileController {
 	@GetMapping("/downloadFile/{fileId}")
 	public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable Integer fileId) {
 		Doc doc = uploadFileService.getFile(fileId).get();
+		System.out.println("data:"+doc.getData());
 		return ResponseEntity.ok()
 				.contentType(MediaType.parseMediaType(doc.getDocType()))
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment:filename=\"" + doc.getDocName() +"\"")
