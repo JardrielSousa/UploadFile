@@ -1,5 +1,7 @@
 package br.com.controller;
 
+import java.util.stream.Collectors;
+
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -24,7 +26,7 @@ public class UploadFileController {
 
 	@GetMapping("/")
 	public String get(Model model) {
-		uploadFileService.getFiles().stream().forEach(docs->model.addAttribute("docs", docs));
+		model.addAttribute("docs",uploadFileService.getFiles().stream().collect(Collectors.toList()));
 		return "doc";
 	}
 
